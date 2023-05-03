@@ -15,8 +15,8 @@ const Navbar = () => {
 
   return (
     <nav style={navStyles}>
-      <Link to="/">Accueil</Link>
-      <Link to="/articles">Liste des articles</Link>
+      <a href="/">Accueil</a>
+      <a href="/articles">Liste des articles</a>
     </nav>
   );
 };
