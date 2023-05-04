@@ -17,7 +17,7 @@ const footerStyles: { [key: string]: CSSProperties } = {
 const Footer = () => {
   return (
     <footer style={footerStyles.footer}>
-   <a href='mailto:jonathan@ouzom.fr'>Me contacter</a>
+   <a style={footerStyles.link} href='mailto:jonathan@ouzom.fr'>Me contacter</a>
     </footer>
   );
 };
