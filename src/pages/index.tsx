@@ -10,10 +10,68 @@ import SEO from "./seo";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useState } from "react";
+
+const services = [
+  {
+    title: "Audit Ecoconception",
+    description:
+      "Évaluation de la conception d'un produit, d'un service ou d'un processus du point de vue de son impact environnemental. Identification des aspects à améliorer pour réduire l'impact environnemental, tout en optimisant la performance et l'efficacité globales.",
+  },
+  {
+    title: "Audit cybersécurité",
+    description:
+      "Évaluation de la sécurité d'un système informatique ou d'une infrastructure numérique. Identification des vulnérabilités potentielles et prévention des attaques, violations de données et failles de sécurité.",
+  },
+  {
+    title: "Développement de site vitrine",
+    description:
+      "Création d'un site web pour présenter l'activité, les produits ou les services d'une entreprise de manière claire et attrayante. Renforcement de la visibilité et de l'image de marque en ligne.",
+  },
+  {
+    title: "Développement de site e-commerce",
+    description:
+      "Création d'un site web pour vendre des produits ou des services en ligne. Mise en place de fonctionnalités telles que des catalogues de produits, des systèmes de paiement sécurisés, des paniers d'achat, et plus encore.",
+  },
+  {
+    title: "Développement de SaaS",
+    description:
+      "Création d'un logiciel en tant que service (SaaS) pour répondre aux besoins spécifiques des entreprises. Fourniture d'un logiciel personnalisé accessible en ligne via un abonnement, sans investir dans l'infrastructure et les ressources nécessaires.",
+  },
+];
+const servicesSectionStyles = {
+  marginBottom: "2rem",
+};
+
+const servicesContainerStyles = {
+  display: "flex"as const,
+  flexWrap: "wrap"as const,
+  justifyContent: "space-evenly"as const,
+  alignItems: "center"as const,
+};
+
+const serviceCardStyles = {
+  padding: "1rem",
+  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+  borderRadius: "4px",
+  backgroundColor: "#ffffff",
+  width: "calc(50% - 2rem)",
+  marginBottom: "1rem",
+  height: "150px",
+};
+
+const serviceTitleStyles = {
+  marginBottom: "1rem",
+};
 const flexStyles = {
   display: "flex",
 };
-
+const imageStyles = {
+  display: "block",
+  marginLeft: "auto",
+  marginRight: "auto",
+  maxWidth: "100%", 
+  height: "auto" 
+};
 const halfWidthStyle = {
   width: "50%",
 };
@@ -64,6 +122,7 @@ En fin de compte, mon amour pour le développement web durable est motivé par m
             <img
               src="/images/download.jpg"
               alt="Ecoconception"
+              style={imageStyles}
             />
           </div>
         </div>
@@ -76,6 +135,7 @@ En fin de compte, mon amour pour le développement web durable est motivé par m
           <img
               src="/images/download.jpg"
               alt="Ecoconception"
+              style={imageStyles}
             />
         </div>
        
@@ -113,6 +173,7 @@ En somme, mon expérience et ma passion pour le développement web et l'écoconc
             <img
               src="/images/download.jpg"
               alt="Ecoconception"
+              style={imageStyles}
             />
           </div>
         </div>
@@ -157,16 +218,17 @@ En somme, mon expérience et ma passion pour le développement web et l'écoconc
         </Carousel>
       </section>
 
-      <section style={sectionStyles}>
-        <h2 style={headingStyles}>Services proposés</h2>
-        <ul>
-          <li>Audit Ecoconception : Ce service consiste à évaluer la conception d'un produit, d'un service ou d'un processus du point de vue de son impact environnemental. L'audit ecoconception peut aider à identifier les aspects qui peuvent être améliorés pour réduire l'impact environnemental d'un produit ou d'un processus, tout en améliorant la performance et l'efficacité globales. Cela peut inclure des recommandations pour optimiser la consommation d'énergie, la gestion des déchets, l'utilisation de matériaux durables, etc.</li>
-          <li>Audit cybersécurité : Ce service consiste à évaluer la sécurité d'un système informatique ou d'une infrastructure numérique en identifiant les vulnérabilités potentielles. L'audit cybersécurité peut aider à prévenir les attaques de pirates informatiques, les violations de données et les failles de sécurité. Cela peut inclure des tests de pénétration, des évaluations de sécurité des applications, des audits de conformité réglementaire, etc.</li>
-          <li>Dévelloppement de site vitrine: Ce service consiste à créer un site web qui permet de présenter l'activité, les produits ou les services d'une entreprise de manière claire et attrayante. Le site vitrine peut inclure des informations sur l'entreprise, ses produits et services, des témoignages de clients, des coordonnées de contact, etc. L'objectif est de fournir une vitrine en ligne pour l'entreprise qui permettra de renforcer sa visibilité et son image de marque.</li>
-          <li>Dévelloppement de site e-commerce: Ce service consiste à créer un site web qui permet de vendre des produits ou des services en ligne. Le site e-commerce peut inclure des fonctionnalités telles que des catalogues de produits, des systèmes de paiement en ligne sécurisés, des paniers d'achat, des comptes clients, des outils de gestion de stocks, etc. L'objectif est de permettre aux entreprises de vendre leurs produits en ligne de manière efficace et sécurisée.</li>
-          <li>Dévelloppement de Sass:Ce service consiste à créer un logiciel en tant que service (SaaS) qui peut être utilisé par les entreprises pour répondre à leurs besoins spécifiques. Le logiciel est hébergé sur le cloud et est accessible en ligne via un abonnement. Le développement de SaaS peut inclure la conception et le développement de la plateforme, la configuration des fonctionnalités, la personnalisation des interfaces utilisateur, la mise en œuvre de mesures de sécurité, etc. L'objectif est de fournir un logiciel personnalisé aux entreprises sans avoir à investir dans l'infrastructure et les ressources nécessaires pour développer leur propre solution.</li>
-        </ul>
-      </section>
+      <section style={servicesSectionStyles}>
+  <h2>Services proposés</h2>
+  <div style={servicesContainerStyles}>
+    {services.map((service, index) => (
+      <div style={serviceCardStyles}>
+        <h3 style={serviceTitleStyles}>{service.title}</h3>
+        <p>{service.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
     </Layout>
   );
 };
