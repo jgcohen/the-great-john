@@ -2,11 +2,6 @@ import * as React from "react";
 
 import Layout from "./layout";
 import SEO from "./seo";
-// import ecoIcon from "/images/eco-icon.svg";
-// import securityIcon from "/images/security-icon.svg";
-// import showcaseIcon from "/images/showcase-icon.svg";
-// import ecommerceIcon from "/images/ecommerce-icon.svg";
-// import saasIcon from "/images/saas.png";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useState } from "react";

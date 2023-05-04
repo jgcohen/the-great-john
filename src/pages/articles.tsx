@@ -29,7 +29,6 @@ type Article = {
 };
 
 const ArticlesList = () => {
-  // Utilisation du type Article pour définir l'état articles
   const [articles, setArticles] = React.useState<Article[]>([]);
   const [currentIndex, setCurrentIndex] = React.useState<number>(0);
   const [showLastFive, setShowLastFive] = useState(false);
@@ -40,18 +39,18 @@ const ArticlesList = () => {
       text: article.text.replace(/\n/g, "<br />"),
     }));
     setArticles(formattedArticles);
-    setCurrentIndex(formattedArticles.length - 1); // Mettre à jour l'index initial
+    setCurrentIndex(formattedArticles.length - 1);
   }, []);
 
   const handlePrevious = () => {
     if (currentIndex < articles.length - 1) {
-      setCurrentIndex(currentIndex + 1); // Inverser l'ordre
+      setCurrentIndex(currentIndex + 1); 
     }
   };
 
   const handleNext = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1); // Inverser l'ordre
+      setCurrentIndex(currentIndex - 1); 
     }
   };
 
